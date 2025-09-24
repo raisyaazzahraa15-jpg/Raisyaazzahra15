@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Muhammad Fayruz Alwi - Profil Personal Branding</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+    color: #e0e7ff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  a {
+    color: #7ab8ff;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 3rem auto 4rem;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+  }
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #001f3f; /* navy text */
+    background-color: white; /* kotak putih */
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.7);
+  }
+  /* Blue navy box for intro */
+  #intro-box {
+    background-color: #001f3f; /* biru navy */
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 15px rgba(0, 31, 63, 0.8);
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  /* About & Biodata combined box (biru laut) */
+  #about-biodata {
+    background-color: #004080; /* biru laut */
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 15px rgba(0, 64, 128, 0.8);
+    color: #dbeafe;
+    line-height: 1.5;
+    font-size: 1.1rem;
+  }
+  #about-biodata h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #a3c1ff;
+    text-shadow: 0 0 6px #7ab8ff;
+    border-bottom: 3px solid #7ab8ff;
+    padding-bottom: 0.25rem;
+  }
+  #about-biodata h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #7ab8ff;
+    text-shadow: 0 0 5px #7ab8ff;
+  }
+  /* Navigation top-right */
+  nav {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(0, 31, 63, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    z-index: 20;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  nav li {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #a3c1ff;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #7ab8ff;
+    color: #001f3f;
+    border-bottom-color: #001f3f;
+    outline: none;
+  }
+  /* Section Titles */
+  h2 {
+    border-bottom: 3px solid #7ab8ff;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    color: #a3c1ff;
+    text-shadow: 0 0 6px #7ab8ff;
+  }
+  /* Keterampilan Saya */
+  #skills {
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #skills h2 {
+    background-color: #004080; /* biru laut */
+    border-radius: 12px 12px 0 0;
+    padding: 1rem 2rem;
+    margin: 0 0 0.5rem 0;
+    color: #cbd5e1;
+    box-shadow: 0 0 15px rgba(0, 64, 128, 0.8);
+  }
+  #skills-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .skill-box {
+    background-color: #004080; /* biru laut */
+    border-radius: 0 0 12px 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgba(0, 64, 128, 0.8);
+    flex: 1 1 45%;
+    min-width: 280px;
+    color: #cbd5e1;
+  }
+  .skill-box h3 {
+    margin-top: 0;
+    color: #7ab8ff;
+    text-shadow: 0 0 5px #7ab8ff;
+    margin-bottom: 0.75rem;
+  }
+  .skill-box p {
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  /* Contact Info box (biru laut) */
+  #contact-info {
+    background-color: #004080; /* biru laut */
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    max-width: 400px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 15px rgba(0, 64, 128, 0.8);
+    color: #dbeafe;
+  }
+  #contact-info h2 {
+    margin-bottom: 1rem;
+  }
+  #contact-info p {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 1px solid #7ab8ff;
+    padding-bottom: 0.25rem;
+  }
+  #contact-info span {
+    font-weight: 400;
+    color: #a3c1ff;
+  }
+  /* Contact Form */
+  #contact-form {
+    background-color: rgba(0, 51, 102, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    color: #dbeafe;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    box-shadow: 0 0 15px rgba(0, 51, 102, 0.8);
+  }
+  #contact-form h2 {
+    margin-top: 0;
+  }
+  #contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #contact-form label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #7ab8ff;
+    text-shadow: 0 0 4px #7ab8ff;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  #contact-form input:focus,
+  #contact-form textarea:focus {
+    outline: 2px solid #7ab8ff;
+    background-color: #e0e7ff;
+    color: #001f3f;
+  }
+  #contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  #contact-form button {
+    background-color: #7ab8ff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #001f3f;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    box-shadow: 0 0 10px #7ab8ff;
+  }
+  #contact-form button:hover {
+    background-color: #a3c1ff;
+  }
+  /* Responsive */
+  @media (max-width: 700px) {
+    nav {
+      position: static;
+      margin-bottom: 2rem;
+      text-align: center;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    #skills-container {
+      flex-direction: column;
+    }
+    #contact-info, #contact-form, #intro-box, #about-biodata {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  /* Water wave animation background */
+  .water-wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 150px;
+    background: rgba(122, 184, 255, 0.3);
+    border-radius: 100% 50% / 30% 70%;
+    animation: waveMove 8s linear infinite;
+    filter: blur(8px);
+    opacity: 0.6;
+    z-index: 5;
+    transform-origin: center bottom;
+  }
+  .water-wave:nth-child(2) {
+    bottom: 20px;
+    animation-duration: 12s;
+    opacity: 0.4;
+    background: rgba(122, 184, 255, 0.2);
+  }
+  @keyframes waveMove {
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-25%) translateY(10px) rotate(3deg);
+    }
+    100% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="water-wave"></div>
+  <div class="water-wave"></div>
+
+  <nav aria-label="Navigasi Profil">
+    <ul>
+      <li><a href="#about-biodata">Tentang Saya & Biodata</a></li>
+      <li><a href="#skills">Keterampilan</a></li>
+      <li><a href="#contact-info">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" role="main">
+    <header>
+      <h1>Muhammad Fayruz Alwi</h1>
+    </header>
+
+    <section id="intro-box" aria-label="Perkenalan">
+      HI Saya Fayruz. Saya tinggal di Batam dan saya seorang siswa SMK7 BATAM! jurusan Rekayasa Perangkat Lunak (RPL), yang sedang belajar pemrograman, software engineer, dan web developer. Saya ingin membangun karir di bidang Software Engineer.
+    </section>
+
+    <section id="about-biodata" aria-label="Tentang Saya dan Biodata">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya adalah siswa SMK kelas 10 jurusan Rekayasa Perangkat Lunak (RPL) yang sedang belajar pemrograman seperti HTML, C++, SQL, CSS, JavaScript, dan bahasa pemrograman lainnya. Walaupun saya belum memiliki pengalaman coding sebelumnya, saya sangat bersemangat untuk belajar, mengeksplorasi hal yang baru dan mengembangkan kemampuan saya agar dapat berkarir sebagai software engineer di masa depan.
+      </p>
+      <h3>BIODATA DIRI</h3>
+      <p><strong>Biodata Singkat & Jenjang Pendidikan</strong></p>
+      <p>Nama Lengkap: Muhammad Fayruz Alwi</p>
+      <p>Tanggal Lahir: 19 Februari 2010, Batam</p>
+      <p>Alamat: Bida Asri 2 blok D-10</p>
+      <p>Hobi: Membaca manhwa, bobok</p>
+      <h3>Riwayat Pendidikan:</h3>
+      <p>SMP: SMPN 42 BATAM (Kelas 7-9)</p>
+      <p>SMK: SMK 7 Jurusan RPL (kelas 10, saat ini)</p>
+    </section>
+
+    <section id="skills" aria-label="Keterampilan Saya">
+      <h2>Keterampilan Saya</h2>
+      <div id="skills-container">
+        <div class="skill-box">
+          <h3>Pemrograman & Coding</h3>
+          <p>Sedang belajar HTML, C++, SQL, CSS, JavaScript, dan bahasa pemrograman lainnya.</p>
+        </div>
+        <div class="skill-box">
+          <h3>Software & Tools</h3>
+          <p>Canva (basic), Microsoft Office (Word, Excel dasar).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-info" aria-label="Kontak Saya">
+      <h2>Kontak Saya</h2>
+      <p>Email: <span>fayruzalwi19@gmail.com</span></p>
+      <p>Instagram: <span>@fayruzaxz</span></p>
+      <p>No WA: <span>+62 821 7364 2924</span></p>
+    </section>
+
+    <section id="contact-form" aria-label="Formulir Hubungi Saya">
+      <h2>Hubungi Saya</h2>
+      <form action="mailto:fayruzalwi19@gmail.com" method="POST" enctype="text/plain" novalidate>
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="Nama" placeholder="Nama Anda" required />
+
+        <label for="email">Email Anda</label>
+        <input type="email" id="email" name="Email" placeholder="Email Anda" required />
+
+        <label for="message">Pesan Anda</label>
+        <textarea id="message" name="Pesan" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
