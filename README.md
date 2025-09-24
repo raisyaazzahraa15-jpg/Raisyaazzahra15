@@ -102,7 +102,7 @@
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/160" alt="Foto Profil Raisya">
+    <img 
     <h1>Raisya Azzahra</h1>
     <p>Personal Branding | Canva Enthusiast | Kreator Konten Visual</p>
   </header>
